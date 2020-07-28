@@ -16,7 +16,7 @@ public class Contact {
     @Id
     Long id;
     String email;
-    Integer phone;
+    String phone;
 
     @OneToOne
     @MapsId

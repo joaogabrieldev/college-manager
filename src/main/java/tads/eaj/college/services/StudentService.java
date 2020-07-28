@@ -6,6 +6,7 @@ import tads.eaj.college.model.Student;
 import tads.eaj.college.repository.StudentRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -35,4 +36,8 @@ public class StudentService {
     public List<Student> getAll() {
         return repository.findAll();
     }
+
+    public Optional<Student> findById(Long id) { return repository.findById(id); }
+
+    public Student saveAndFlush(Student student) { return repository.saveAndFlush(student); }
 }

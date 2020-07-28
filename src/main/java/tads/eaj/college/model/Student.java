@@ -17,7 +17,8 @@ public class Student {
     Long id;
 
     String nameStudent;
-    @OneToOne(mappedBy = "student")
+
+    @OneToOne(mappedBy = "student", cascade = {CascadeType.ALL})
     Contact contact;
 
     @ManyToOne

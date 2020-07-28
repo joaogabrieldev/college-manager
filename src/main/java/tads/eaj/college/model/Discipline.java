@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Discipline {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String nameDiscipline;
@@ -29,6 +30,6 @@ public class Discipline {
         joinColumns = @JoinColumn(name = "discipline_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "student_id")
     )
-    List<Student> Students;
+    List<Student> students;
 
 }

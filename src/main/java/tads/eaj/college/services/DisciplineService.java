@@ -3,9 +3,11 @@ package tads.eaj.college.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tads.eaj.college.model.Discipline;
+import tads.eaj.college.model.Student;
 import tads.eaj.college.repository.DisciplineRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DisciplineService {
@@ -35,4 +37,8 @@ public class DisciplineService {
     public List<Discipline> getAll() {
         return repository.findAll();
     }
+
+    public Optional<Discipline> findById(Long id) { return repository.findById(id); }
+
+    public Discipline saveAndFlush(Discipline discipline) { return repository.saveAndFlush(discipline); }
 }

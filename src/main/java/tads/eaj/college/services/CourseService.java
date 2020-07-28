@@ -6,6 +6,7 @@ import tads.eaj.college.model.Course;
 import tads.eaj.college.repository.CourseRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CourseService {
@@ -35,5 +36,9 @@ public class CourseService {
     public List<Course> getAll() {
         return repository.findAll();
     }
+
+    public Optional<Course> findById(Long id) { return repository.findById(id); }
+
+    public Course saveAndFlush(Course course) { return repository.saveAndFlush(course); }
 
 }

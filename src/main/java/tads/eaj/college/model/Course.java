@@ -22,8 +22,8 @@ public class Course {
     String type;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "course")
-    List<Student> Students;
+    List<Student> students;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "course")
-    List<Discipline> Disciplines;
+    List<Discipline> disciplines;
 }
