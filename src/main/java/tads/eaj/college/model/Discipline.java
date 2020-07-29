@@ -20,7 +20,7 @@ public class Discipline {
     String nameDiscipline;
     Integer horas;
 
-    @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     Course course;
 
