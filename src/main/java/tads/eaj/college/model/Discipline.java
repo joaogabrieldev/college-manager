@@ -18,18 +18,12 @@ public class Discipline {
     Long id;
 
     String nameDiscipline;
-    Integer Horas;
+    Integer horas;
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id")
     Course course;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-        name = "discipline_students",
-        joinColumns = @JoinColumn(name = "discipline_id", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "student_id")
-    )
-    List<Student> students;
+
 
 }

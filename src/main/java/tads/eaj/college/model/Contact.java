@@ -14,11 +14,12 @@ import javax.persistence.*;
 
 public class Contact {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String email;
     String phone;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "student_id")
-    Student student;
+    //@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    //@JoinColumn(name = "student_id")
+    //Student student;
 }
