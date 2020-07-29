@@ -18,8 +18,7 @@ public class Contact {
     String email;
     String phone;
 
-    @OneToOne
-    @MapsId
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "student_id")
     Student student;
 }

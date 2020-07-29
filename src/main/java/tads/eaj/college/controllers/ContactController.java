@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/contact")
+@CrossOrigin(origins = {"http://localhost:3000"}, exposedHeaders = "X-Total-Count")
 public class ContactController {
     private ContactService service;
 
@@ -26,6 +27,7 @@ public class ContactController {
         return service.findById(id).map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
+
 
     @PostMapping
     public ResponseEntity<Contact> insert(@RequestBody Contact contact) {

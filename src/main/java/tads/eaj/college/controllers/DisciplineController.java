@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/discipline")
+@CrossOrigin(origins = {"http://localhost:3000"}, exposedHeaders = "X-Total-Count")
 public class DisciplineController {
     private DisciplineService service;
 

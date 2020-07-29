@@ -4,11 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+import tads.eaj.college.model.Contact;
+import tads.eaj.college.model.Course;
+import tads.eaj.college.model.Student;
 import tads.eaj.college.repository.ContactRepository;
 import tads.eaj.college.repository.CourseRepository;
 import tads.eaj.college.repository.DisciplineRepository;
 import tads.eaj.college.repository.StudentRepository;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Component
@@ -164,8 +169,8 @@ public class RunMyCode implements ApplicationRunner {
 
 
 
-        /* --- ONE TO MANY | COURSE - STUDENTS ---
 
+        /*
         Course c1 = new Course();
         c1.setNameCourse("TADS");
         c1.setArea("Informatica");
@@ -186,19 +191,19 @@ public class RunMyCode implements ApplicationRunner {
         s2.setCourse(c1);
         s3.setCourse(c1);
         CourseRepository.save(c1);
-         */
+        */
 
 
 
 
-        /*
-        --- ONE TO ONE | STUDENTS - CONTACT ---
 
+
+        /* OEN TO ONE
         Student s1 = new Student();
         Contact c1 = new Contact();
         s1.setNameStudent("Joaozinho");
         c1.setEmail("Joaozinho@gmail.com");
-        c1.setPhone(12345);
+        c1.setPhone("12345");
 
         s1.setContact(c1);
         c1.setStudent(s1);
